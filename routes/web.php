@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.index');
+});
+
+Route::get('/about', function () {
+    return view('pages.about');
+});
+
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+Route::post('/contact', function () {
+    echo 'contact submit';
+    $data = request()->all();
+    // dd($data);
+    echo 'Email:'.$data['email'];
+    echo 'Msg:'.$data['body'];
+
+    //return view('welcome');
 });
