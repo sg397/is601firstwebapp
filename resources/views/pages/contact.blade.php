@@ -9,16 +9,21 @@
         </div>
         <div class="card-body">
 
-            <form action="/contact" method="post">
+            <form role='form' id='contact-form' class='contact-form'  method='post' action="{{route('contact.store')}}">
                 @csrf
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="name"><b>Name</b></label>
+                    <input type='text' class="form-control" name='name' autocomplete="off" id="Name"
+                           placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="email"><b>Email address</b></label>
                     <input name='email' type="email" class="form-control" id="exampleFormControlInput1"
                            placeholder="name@example.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message</label>
+                    <label for="message"><b>Message</b></label>
                     <textarea name='body' class="form-control" id="body" rows="3"></textarea>
                 </div>
 
